@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const expInfo = await ExpInfo.find();
+  const expInfo = await ExpInfo.find().sort({_id:-1});
   res.send(expInfo);
 });
 
